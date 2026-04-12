@@ -1,6 +1,17 @@
 export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+autoload -Uz compinit && compinit
+
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+setopt SHARE_HISTORY
 
 eval "$(starship init zsh)"
+
+alias ll="ls -la"
 
 {{ if eq .chezmoi.os "darwin" -}}
 alias update="brew update && brew upgrade"
