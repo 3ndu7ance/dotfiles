@@ -5,3 +5,7 @@ Brewfile
 {{ if ne .chezmoi.os "linux" }}
 packages-arch.txt
 {{ end }}
+
+{{ if ne .chezmoi.osRelease.id "arch" }}
+.config/hypr
+{{ end }}
